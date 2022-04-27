@@ -51,8 +51,8 @@ namespace Miscelania_menu
             Console.WriteLine(" 3. Potencia al cuadrado");
             Console.WriteLine(" 4. Conversion euros a dolares");
             Console.WriteLine(" 5. Area y perimetro de un cuadrado");
-            Console.WriteLine(" 6. Area y perimetro de un cilindro");
-            Console.WriteLine(" 7. Area de un circulo");
+            Console.WriteLine(" 6. Area y volumen de un cilindro");
+            Console.WriteLine(" 7. Area y perimetro de un circulo");
             Console.WriteLine(" 8. Promedio de 3 numeros");
             Console.WriteLine("Elija 0 para salir");
             opcion = char.Parse(Console.ReadLine());
@@ -71,9 +71,9 @@ namespace Miscelania_menu
                 case '5': 
                     AreaPerimetroCuadrado();break;
                 case '6': 
-                    AreaPerimetroCilindro();break;
+                    AreaVolumenCilindro();break;
                 case '7':
-                    AreaCirculo();break;
+                    AreaPerimetroCirculo();break;
                 case '8':
                     PromedioTres();break;
                     
@@ -121,7 +121,7 @@ namespace Miscelania_menu
                 Console.WriteLine("El resultado de la potencia es: " + total);
             } 
 
-            static void Conversion ()
+            static void Conversion()
             {
                 float e;
                 float d;
@@ -132,57 +132,57 @@ namespace Miscelania_menu
             }
             static void AreaPerimetroCuadrado ()
             {
-                int lado;
-                int p;
+                int l;
                 int a;
+                int p;
                 Console.WriteLine("Digite la medida de un lado del cuadrado");
-                lado = Convert.ToInt32(Console.ReadLine());
-                p = lado * 4;
-                a = lado * lado;
+                l = Convert.ToInt32(Console.ReadLine());
+                p = l * 4;
+                a = l * l;
                 Console.WriteLine("El perimetro de su cuadrado es: " + p);
                 Console.WriteLine("El area de su cuadrado es: " + a);
             }
-            static void AreaPerimetroCilindro ()
+            static void AreaVolumenCilindro ()
             {
-                int area;
-                int volumen;
-                int radio;
-                int altura;
+                int ar;
+                int vol;
+                int rad;
+                int al;
                 Console.WriteLine("Digite el radio de su cilindro");
-                radio = Convert.ToInt32(Console.ReadLine());
+                rad = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Digite la altura del cilindro");
-                altura = Convert.ToInt32(Console.ReadLine());
-                area = (int)(System.Math.PI * 2 * radio + altura + System.Math.PI * 2 * radio * radio);
-                volumen = ((int)(System.Math.PI * radio * radio * altura));
-                Console.WriteLine("El area de su cilindro es: " + area);
-                Console.WriteLine("El volumen de su cilindro es " + volumen);
+                al = Convert.ToInt32(Console.ReadLine());
+                ar = (int)(System.Math.PI * 2 * rad + al + System.Math.PI * 2 * rad * rad);
+                vol = ((int)(System.Math.PI * rad * rad * al));
+                Console.WriteLine("El area de su cilindro es: " + ar);
+                Console.WriteLine("El volumen de su cilindro es " + vol);
             }
-            static void AreaCirculo ()
+            static void AreaPerimetroCirculo ()
             {
-                int radio;
-                int area;
-                int longitud;
+                int r;
+                int a;
+                int l;
                 Console.WriteLine("Digite el radio de la circunferencia");
-                radio = Convert.ToInt32(Console.ReadLine());
-                longitud = (int)(radio * 2 * System.Math.PI);
-                area = (int)(System.Math.PI * radio * radio);
-                Console.WriteLine("El area del circulo es: " + area);
-                Console.WriteLine("La longitud de la circunferencia es: " + longitud);
+                r = Convert.ToInt32(Console.ReadLine());
+                l = (int)(r * 2 * System.Math.PI);
+                a = (int)(System.Math.PI * r * r);
+                Console.WriteLine("El area del circulo es: " + a);
+                Console.WriteLine("La longitud de la circunferencia es: " + l);
             }
             static void PromedioTres ()
             {
-                int datos;
-                int d2;
-                int d3;
+                int numeros;
+                int n2;
+                int n3;
                 int promedio;
                 Console.WriteLine("Digite 3 numeros enteros para saber su promedio");
                 Console.WriteLine("Digite el primer numero");
-                datos = Convert.ToInt32(Console.ReadLine());
+                numeros = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Digite el segundo numero");
-                d2 = Convert.ToInt32(Console.ReadLine());
+                n2 = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Digite el tercer numero");
-                d3 = Convert.ToInt32(Console.ReadLine());
-                promedio = datos + d2 + d3 / 3;
+                n3 = Convert.ToInt32(Console.ReadLine());
+                promedio = numeros + n2 + n3 / 3;
                 Console.WriteLine("El promedio de sus numeros es: " + promedio);
             }
 
