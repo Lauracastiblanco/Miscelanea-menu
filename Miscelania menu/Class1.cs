@@ -8,12 +8,12 @@ namespace Miscelania_menu
 {
     internal class Class1
     {
-        public static void Main(string[] args)
+
+        public static void mein()
 
         {
             int seleccion;
             Console.WriteLine("Bienvenido al Menu");
-
             Console.WriteLine("Elija 1 si desea ir a la seccion de operadores");
             Console.WriteLine("Elija 2 si desea ir a la seccion de condicionales");
             Console.WriteLine("Elija 3 si desea ir a la seccion de bucles");
@@ -25,15 +25,10 @@ namespace Miscelania_menu
             switch (seleccion)
             {
                 case '1':
-                    operadores(); break;
+                    operadores();break;
                 case '2':
-                    Condicionales(); break;
-                case '3':
-                    Bucles(); break;
-                case '4':
-                    Arreglos(); break;
-                case '0': Environment.Exit(0);
-                    break;
+                    Condicionales();break;
+                case '0':Environment.Exit(0); break;
                 default: Console.WriteLine("Selecciona una opcion"); break;
 
             }
@@ -68,19 +63,19 @@ namespace Miscelania_menu
                     PotenciaEnteros(); break;
                 case '4':
                     Conversion(); break;
-                case '5': 
+                case '5':
                     AreaPerimetroCuadrado();break;
-                case '6': 
+                case '6':
                     AreaVolumenCilindro();break;
                 case '7':
                     AreaPerimetroCirculo();break;
                 case '8':
                     PromedioTres();break;
-                    
-                case '0':
-                    Environment.Exit(0); break;
 
-                default : Console.WriteLine("Selecciona una opcion"); break; 
+                case '0':
+                    Environment.Exit(0);break;
+
+                default: Console.WriteLine("Selecciona una opcion");break;
 
 
             }
@@ -91,6 +86,7 @@ namespace Miscelania_menu
                 int a;
                 int b;
                 int area;
+
                 Console.WriteLine("Por favor, digite la base del triangulo");
                 b = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Ahora, por favor, digite la altura");
@@ -119,7 +115,7 @@ namespace Miscelania_menu
                 numero1 = Convert.ToInt32(Console.ReadLine());
                 total = numero1 * numero1;
                 Console.WriteLine("El resultado de la potencia es: " + total);
-            } 
+            }
 
             static void Conversion()
             {
@@ -128,7 +124,7 @@ namespace Miscelania_menu
                 Console.WriteLine("Digite el numero en Euros");
                 e = Convert.ToSingle(Console.ReadLine());
                 d = (float)(e * 1.0831);
-                Console.WriteLine(e+ " en doloares es " + d);
+                Console.WriteLine(e + " en doloares es " + d);
             }
             static void AreaPerimetroCuadrado ()
             {
@@ -189,18 +185,236 @@ namespace Miscelania_menu
 
 
         }
-            public static void Condicionales()
-            {
-                Console.WriteLine("Pagina en proceso");
-            }
-            public static void Bucles()
-            {
-                Console.WriteLine("Pagina en proceso");
-            }
-            public static void Arreglos()
-            {
-                Console.WriteLine("Pagina en proceso");
-            }
-        
+        public static void Condicionales()
+        {
+            int a;
+            int b;
+            char eleccion;
 
-        } } 
+            Console.WriteLine("Por favor, elige un algoritmo:");
+            Console.WriteLine(" 1. Un algoritmo para saber si el número ingresado por teclado es positivo o negativo.");
+            Console.WriteLine(" 2. Un algoritmo que reciba dos números por teclado y diga cuál es el mayor y cuál el menor.");
+            Console.WriteLine(" 3. Un algoritmo que lea tres números enteros positivos y que calcule e imprima en pantalla el menor y el mayor de ellos.");
+            Console.WriteLine(" 4. Dados dos números A y B, sumarlos si A es menor que B o sino restarlos.");
+            Console.WriteLine(" 5. Dados dos números A y B encontrar el cociente entre A y B. Recordar que la división por cerono está definida, en ese caso debe aparecer una leyenda anunciando que la división no esposible.");
+            Console.WriteLine(" 6. Dados dos números A y B, sumarlos si al menos uno de ellos es negativo, en caso contrario multiplicarlos.");
+            Console.WriteLine(" 7. Escribir un algoritmo que determine si un año es bisiesto o no.");
+            Console.WriteLine("Elija 0 para salir");
+            eleccion = char.Parse(Console.ReadLine());
+
+
+            switch (eleccion)
+            {
+                case '1':
+                    PositivoNegativo(); break;
+                case '2':
+                    MayorMenor(); break;
+                case '3':
+                    TresEnteros(); break;
+                case '4':
+                    SumaResta(); break;
+                case '5':
+                    Cociente(); break;
+                case '6':
+                    SumaMultiplicacion(); break;
+                case '7':
+                    Bisiesto(); break;
+
+                case '0':
+                    Environment.Exit(0); break;
+
+                default: Console.WriteLine("Selecciona una opcion"); break;
+
+
+            }
+            static void PositivoNegativo()
+
+            {
+                float e;
+                Console.WriteLine("Digita el numero para conocer si es negativo positivo");
+                try
+                {
+                    e = float.Parse(Console.ReadLine());
+
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("No has introducido el numero valido");
+                    e = 0;
+                }
+
+                if (e < 0)
+                {
+                    Console.WriteLine("El numero es negativo.");
+                }
+                else if (e > 0)
+                {
+                    Console.WriteLine("El numero es positivo");
+                }
+            }
+            static void MayorMenor()
+
+            {
+                float n1;
+                float n2;
+                Console.WriteLine("Para llevar a cabo el programa por favor, digite dos numeros");
+                Console.WriteLine("El primer numero es:");
+                n1 = float.Parse(Console.ReadLine());
+                Console.WriteLine("El segundo numero es:");
+                n2 = float.Parse(Console.ReadLine());
+
+                if (n1 < n2)
+                {
+                    Console.WriteLine(n1 + " Es menor que " + n2);
+                    Console.WriteLine(n2 + " Es mayor que " + n1);
+                }
+                else if (n1 > n2)
+                {
+                    Console.WriteLine(n1 + " Es mayor que " + n2);
+                    Console.WriteLine(n2 + " Es menor que " + n1);
+                }
+
+            }
+            static void TresEnteros()
+
+            {
+                int n1;
+                int n2;
+                int n3;
+
+                Console.WriteLine("Para llevar a cabo el programa por favor, digite tres numeros");
+                Console.WriteLine("El primer numero es:");
+                n1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("El segundo numero es:");
+                n2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("El tercer numero es:");
+                n3 = Convert.ToInt32(Console.ReadLine());
+
+                if (n1 >= n2 && n1 >= n3)
+                {
+                    Console.WriteLine(n1 + " Es mayor");
+                }
+                else if (n2 > n3)
+                {
+                    Console.WriteLine(n2 + " Es mayor");
+                }
+                else
+                {
+                    Console.WriteLine(n3 + " Es mayor");
+
+                }
+                if (n1 <= n2 && n1 <= n3)
+                {
+                    Console.WriteLine(n1 + " Es menor");
+                }
+                else if (n2 < n3)
+                {
+                    Console.WriteLine(n2 + " Es menor");
+                }
+                else
+                {
+                    Console.WriteLine(n3 + " Es menor");
+
+                }
+
+            }
+            static void SumaResta()
+
+            {
+                int A;
+                int B;
+                int resta;
+                int suma;
+
+                Console.WriteLine("Para llevar a cabo el programa por favor, digite dos numeros");
+                Console.WriteLine("El primer numero es:");
+                A = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("El segundo numero es:");
+                B = Convert.ToInt32(Console.ReadLine());
+
+                if (A < B)
+                {
+                    suma = A - B;
+                    Console.WriteLine("El resultado de la suma es: " + suma);
+
+
+                }
+                else if (A > B)
+                {
+                    resta = B - A;
+                    Console.WriteLine("El resultado de la resta: " + resta);
+                }
+            }
+
+            static void Cociente()
+
+            {
+                int a;
+                int d;
+                int division;
+                Console.WriteLine("Para llevar a cabo el programa por favor, digite dos numeros");
+                Console.WriteLine("El primer numero es:");
+                a = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("El segundo numero es:");
+                d = Convert.ToInt32(Console.ReadLine());
+
+                if (d == 0 || a == 0)
+                {
+                    Console.WriteLine("La division no es posible");
+                }
+                else if (d > 0)
+                {
+                    division = a / d;
+                    Console.WriteLine(" El resultado de la divison es; " + division);
+
+                }
+
+            }
+            static void SumaMultiplicacion()
+
+            {
+                int a;
+                int b;
+                int suma;
+                int multiplicacion;
+
+                Console.WriteLine("Para llevar a cabo el programa por favor, digite dos numeros");
+                Console.WriteLine("El primer numero es:");
+                a = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("El segundo numero es:");
+                b = Convert.ToInt32(Console.ReadLine());
+
+                if (a < 0 || b < 0)
+                {
+                    suma = a + b;
+                    Console.WriteLine(suma);
+                }
+                else if (a > 0 || b > 0)
+                {
+                    multiplicacion = a * b;
+                    Console.WriteLine(" El resultado de la multiplicacion es: " + multiplicacion);
+
+                }
+            }
+
+            static void Bisiesto()
+
+            {
+                int a;
+                Console.WriteLine("Digite un año para saber si es bisiesto");
+                a = Convert.ToInt32(Console.ReadLine());
+                if (a % 4 == 0 && a % 100 != 0 || a % 400 == 0)
+                {
+                    Console.WriteLine("Es bisiesto" + a);
+                }
+                else
+                {
+                    Console.WriteLine("no es bisiesto " + a);
+                }
+
+
+            }
+        }
+    }
+}
+
